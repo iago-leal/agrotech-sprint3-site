@@ -23,6 +23,8 @@ dist/                site que vai para produção
 
 `dist/` é versionada e publicada como está, sem etapa de build no servidor.
 
+O Node é o 24 (LTS), fixado em `.nvmrc`; `nvm use` na raiz seleciona a versão.
+
 ## Tailwind CSS
 
 - Versão 4.3.3, pela CLI (`@tailwindcss/cli`), instalada como dependência de desenvolvimento.
