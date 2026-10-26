@@ -51,4 +51,3 @@ O nome `build` para o script com `--watch` foi escolha do aluno, contra a conven
 ## Pendências (26/10/2026)
 
 - Nomear ou dispensar o script de minificação.
-- Configurar o repositório remoto no GitHub.
