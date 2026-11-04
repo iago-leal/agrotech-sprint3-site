@@ -9,25 +9,51 @@
     />
     <title>Calibra | Início</title>
 
-    <!-- Tipografia: Archivo (títulos), Atkinson Hyperlegible Next (corpo) e Mono (dados) -->
+    <!-- Fontes: Archivo (títulos), Atkinson Next (texto) e Atkinson Mono (dados) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..800&family=Atkinson+Hyperlegible+Mono:wght@400..700&family=Atkinson+Hyperlegible+Next:ital,wght@0,400..700;1,400..700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS gerado pelo Tailwind -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body class="bg-[#EFEAE0] text-[#2B211A] font-['Atkinson_Hyperlegible_Next',sans-serif] antialiased">
-    <!-- Cabeçalho compartilhado (responsabilidade de integração: CAL-9) -->
+
+  <body
+    class="
+      bg-[#EFEAE0]
+      text-[#2B211A]
+      font-['Atkinson_Hyperlegible_Next',sans-serif]
+      antialiased
+    "
+  >
+    <!-- Cabeçalho (menu) -->
     <header></header>
 
     <main id="conteudo" tabindex="-1">
-      <!-- =====================================================================
-           1. APRESENTAÇÃO (CAL-15)
-           ===================================================================== -->
-      <section class="max-w-7xl mx-auto px-4 lg:px-8 pt-8 pb-14 lg:pt-10 lg:pb-20 flex flex-col lg:flex-row gap-6 lg:gap-14 items-start lg:items-end">
-        <h1 class="lg:w-3/5 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.06] tracking-tight font-['Archivo',sans-serif]">
+
+
+      <!-- ============ Apresentação ============ -->
+      <section
+        class="
+          max-w-7xl mx-auto
+          px-4 lg:px-8
+          pt-8 pb-14 lg:pt-10 lg:pb-20
+          flex flex-col lg:flex-row
+          items-start lg:items-end
+          gap-6 lg:gap-14
+        "
+      >
+        <h1
+          class="
+            lg:w-3/5
+            text-4xl sm:text-5xl lg:text-6xl
+            font-extrabold font-['Archivo',sans-serif]
+            leading-[1.06] tracking-tight
+          "
+        >
           Quanto calcário cada talhão precisa
         </h1>
 
@@ -39,13 +65,27 @@
           <div class="mt-5 flex flex-wrap items-center gap-3">
             <a
               href="#proposta"
-              class="w-full sm:w-auto inline-flex min-h-12 items-center justify-center bg-[#2B211A] hover:bg-[#45372C] text-[#EFEAE0] font-bold px-6 py-3 rounded-xs transition-colors"
+              class="
+                w-full sm:w-auto min-h-12
+                inline-flex items-center justify-center
+                px-6 py-3 rounded-xs
+                bg-[#2B211A] hover:bg-[#45372C]
+                text-[#EFEAE0] font-bold
+                transition-colors
+              "
             >
               Conhecer a proposta
             </a>
+
             <a
               href="#pitch-video"
-              class="inline-flex min-h-12 items-center px-2 font-semibold underline decoration-[1.5px] underline-offset-4 hover:decoration-2"
+              class="
+                min-h-12 px-2
+                inline-flex items-center
+                font-semibold
+                underline decoration-[1.5px] underline-offset-4
+                hover:decoration-2
+              "
             >
               Ver o pitch em vídeo
             </a>
@@ -53,121 +93,230 @@
         </div>
       </section>
 
-      <!-- =====================================================================
-           2. PROPOSTA (CAL-17): problema, solução e ODS 2.4
-           ===================================================================== -->
-      <section id="proposta" class="border-t-[1.5px] border-[#2B211A] py-14 lg:py-24">
+
+      <!-- ============ Proposta ============ -->
+      <section
+        id="proposta"
+        class="
+          py-14 lg:py-24
+          border-t-[1.5px] border-[#2B211A]
+        "
+      >
         <div class="max-w-7xl mx-auto px-4 lg:px-8">
-          <h2 class="text-3xl lg:text-4xl font-bold font-['Archivo',sans-serif] tracking-tight">
+          <h2
+            class="
+              text-3xl lg:text-4xl
+              font-bold font-['Archivo',sans-serif]
+              tracking-tight
+            "
+          >
             A proposta
           </h2>
-          <p class="mt-3.5 max-w-[68ch] text-lg text-[#5E554D] leading-relaxed">
+
+          <p
+            class="
+              mt-3.5 max-w-[68ch]
+              text-lg text-[#5E554D] leading-relaxed
+            "
+          >
             O solo ácido limita a produtividade, e a correção com calcário só funciona na dose certa. O Calibra ajuda o produtor a chegar nela.
           </p>
 
           <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <article class="border-[1.5px] border-[#2B211A] p-5">
-              <h3 class="font-['Archivo',sans-serif] text-xl font-bold">O problema</h3>
+
+            <!-- Problema -->
+            <article class="p-5 border-[1.5px] border-[#2B211A]">
+              <h3 class="text-xl font-bold font-['Archivo',sans-serif]">
+                O problema
+              </h3>
               <p class="mt-2 text-[#5E554D] leading-relaxed">
                 O laudo de solo traz números difíceis de interpretar, e cada talhão pede uma dose diferente de calcário. Sem a conta feita, o produtor corre o risco de aplicar a menos ou a mais.
               </p>
             </article>
 
-            <article class="border-[1.5px] border-[#2B211A] p-5">
-              <h3 class="font-['Archivo',sans-serif] text-xl font-bold">A solução</h3>
+            <!-- Solução -->
+            <article class="p-5 border-[1.5px] border-[#2B211A]">
+              <h3 class="text-xl font-bold font-['Archivo',sans-serif]">
+                A solução
+              </h3>
               <p class="mt-2 text-[#5E554D] leading-relaxed">
                 O produtor informa os dados do laudo e o Calibra calcula a dose por talhão pelo método da saturação por bases. Um engenheiro agrônomo valida o resultado.
               </p>
-              <p class="mt-3 font-['Atkinson_Hyperlegible_Mono',monospace] text-sm">
+              <p class="mt-3 text-sm font-['Atkinson_Hyperlegible_Mono',monospace]">
                 NC (t/ha) = (V2 − V1) × CTC ÷ PRNT
               </p>
             </article>
 
-            <article class="border-[1.5px] border-[#2B211A] bg-[#E4DCCD] p-5">
-              <h3 class="font-['Archivo',sans-serif] text-xl font-bold">ODS 2, meta 2.4</h3>
+            <!-- ODS 2 -->
+            <article
+              class="
+                p-5
+                bg-[#E4DCCD]
+                border-[1.5px] border-[#2B211A]
+              "
+            >
+              <h3 class="text-xl font-bold font-['Archivo',sans-serif]">
+                ODS 2, meta 2.4
+              </h3>
               <p class="mt-2 text-[#5E554D] leading-relaxed">
                 A meta 2.4 trata de sistemas sustentáveis de produção de alimentos e de práticas agrícolas resilientes. Calcular a dose certa evita desperdício de insumo e melhora o uso do solo.
               </p>
             </article>
+
           </div>
         </div>
       </section>
 
-      <!-- =====================================================================
-           3. EQUIPE (CAL-18)
-           ===================================================================== -->
-      <section id="equipe" class="border-t-[1.5px] border-[#2B211A] py-14 lg:py-24">
+
+      <!-- ============ Equipe ============ -->
+      <section
+        id="equipe"
+        class="
+          py-14 lg:py-24
+          border-t-[1.5px] border-[#2B211A]
+        "
+      >
         <div class="max-w-7xl mx-auto px-4 lg:px-8">
-          <h2 class="text-3xl lg:text-4xl font-bold font-['Archivo',sans-serif] tracking-tight">
+          <h2
+            class="
+              text-3xl lg:text-4xl
+              font-bold font-['Archivo',sans-serif]
+              tracking-tight
+            "
+          >
             A equipe
           </h2>
-          <p class="mt-3.5 max-w-[68ch] text-lg text-[#5E554D] leading-relaxed">
+
+          <p
+            class="
+              mt-3.5 max-w-[68ch]
+              text-lg text-[#5E554D] leading-relaxed
+            "
+          >
             Cinco integrantes, cada um responsável por uma parte do site.
           </p>
 
-          <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <li class="border-[1.5px] border-[#2B211A] p-5">
-              <strong class="font-['Archivo',sans-serif] text-lg font-bold">Iago Bernardes Alves Leal Barbosa</strong>
+          <ul
+            class="
+              mt-8
+              grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+              gap-4
+            "
+          >
+            <li class="p-5 border-[1.5px] border-[#2B211A]">
+              <strong class="text-lg font-bold font-['Archivo',sans-serif]">
+                Iago Bernardes Alves Leal Barbosa
+              </strong>
               <p class="mt-1 text-[#5E554D]">Base, integração e entrega</p>
             </li>
-            <li class="border-[1.5px] border-[#2B211A] p-5">
-              <strong class="font-['Archivo',sans-serif] text-lg font-bold">Vinicius de Oliveira Gonçalves</strong>
+
+            <li class="p-5 border-[1.5px] border-[#2B211A]">
+              <strong class="text-lg font-bold font-['Archivo',sans-serif]">
+                Vinicius de Oliveira Gonçalves
+              </strong>
               <p class="mt-1 text-[#5E554D]">Início e Sobre</p>
             </li>
-            <li class="border-[1.5px] border-[#2B211A] p-5">
-              <strong class="font-['Archivo',sans-serif] text-lg font-bold">João Eduardo Busar Pena</strong>
+
+            <li class="p-5 border-[1.5px] border-[#2B211A]">
+              <strong class="text-lg font-bold font-['Archivo',sans-serif]">
+                João Eduardo Busar Pena
+              </strong>
               <p class="mt-1 text-[#5E554D]">Enviar laudo</p>
             </li>
-            <li class="border-[1.5px] border-[#2B211A] p-5">
-              <strong class="font-['Archivo',sans-serif] text-lg font-bold">Plinio Arteman Pedra</strong>
+
+            <li class="p-5 border-[1.5px] border-[#2B211A]">
+              <strong class="text-lg font-bold font-['Archivo',sans-serif]">
+                Plinio Arteman Pedra
+              </strong>
               <p class="mt-1 text-[#5E554D]">Recomendação</p>
             </li>
-            <li class="border-[1.5px] border-[#2B211A] p-5">
-              <strong class="font-['Archivo',sans-serif] text-lg font-bold">Pedro Henrique Conceição Venancio</strong>
+
+            <li class="p-5 border-[1.5px] border-[#2B211A]">
+              <strong class="text-lg font-bold font-['Archivo',sans-serif]">
+                Pedro Henrique Conceição Venancio
+              </strong>
               <p class="mt-1 text-[#5E554D]">Fale Conosco e vídeo</p>
             </li>
           </ul>
         </div>
       </section>
 
-      <!-- =====================================================================
-           4. PITCH EM VÍDEO (CAL-16 e CAL-19)
-           ===================================================================== -->
-      <section id="pitch-video" class="border-t-[1.5px] border-[#2B211A] py-14 lg:py-24">
+
+      <!-- ============ Pitch em vídeo ============ -->
+      <section
+        id="pitch-video"
+        class="
+          py-14 lg:py-24
+          border-t-[1.5px] border-[#2B211A]
+        "
+      >
         <div class="max-w-7xl mx-auto px-4 lg:px-8">
-          <h2 class="text-3xl lg:text-4xl font-bold font-['Archivo',sans-serif] tracking-tight">
+          <h2
+            class="
+              text-3xl lg:text-4xl
+              font-bold font-['Archivo',sans-serif]
+              tracking-tight
+            "
+          >
             O pitch em vídeo
           </h2>
-          <p class="mt-3.5 max-w-[68ch] text-lg text-[#5E554D] leading-relaxed">
+
+          <p
+            class="
+              mt-3.5 max-w-[68ch]
+              text-lg text-[#5E554D] leading-relaxed
+            "
+          >
             Até três minutos percorrendo as páginas do site, da Home ao Fale Conosco.
           </p>
 
-          <!-- Para publicar o vídeo (CAL-19), substitua o conteúdo interno da div abaixo por:
-          <iframe
-            class="absolute inset-0 w-full h-full border-0"
-            src="https://www.youtube.com/embed/CODIGO_DO_VIDEO"
-            title="Pitch em vídeo do Calibra"
-            allowfullscreen
-          ></iframe>
+          <!--
+            Com o vídeo publicado no YouTube (Não listado),
+            troque o conteúdo da div abaixo por:
+
+            <iframe
+              class="absolute inset-0 w-full h-full border-0"
+              src="https://www.youtube.com/embed/CODIGO_DO_VIDEO"
+              title="Pitch em vídeo do Calibra"
+              allowfullscreen
+            ></iframe>
           -->
-          <div class="relative mt-8 max-w-[880px] aspect-video border-[1.5px] border-dashed border-[#2B211A] bg-[#E4DCCD] flex flex-col items-center justify-center gap-3 p-6 text-center">
-            <div class="w-16 h-16 grid place-items-center border-2 border-[#2B211A]">
+          <div
+            class="
+              relative mt-8 max-w-[880px] aspect-video p-6
+              flex flex-col items-center justify-center gap-3
+              bg-[#E4DCCD]
+              border-[1.5px] border-dashed border-[#2B211A]
+              text-center
+            "
+          >
+            <div
+              class="
+                w-16 h-16
+                grid place-items-center
+                border-2 border-[#2B211A]
+              "
+            >
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M8 5l11 7-11 7z" fill="currentColor" />
               </svg>
             </div>
-            <strong class="font-['Archivo',sans-serif] text-xl font-bold">
+
+            <strong class="text-xl font-bold font-['Archivo',sans-serif]">
               Pitch do Calibra · até 3 minutos
             </strong>
+
             <p class="max-w-[36ch] text-[#5E554D]">
               Vídeo em produção: o link do YouTube entra aqui na entrega.
             </p>
           </div>
         </div>
       </section>
+
+
     </main>
 
-    <!-- Rodapé compartilhado (responsabilidade de integração: CAL-9) -->
+    <!-- Rodapé -->
     <footer></footer>
   </body>
 </html>
