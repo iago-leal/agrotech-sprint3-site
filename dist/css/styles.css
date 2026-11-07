@@ -35,6 +35,14 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-palha: #EFEAE0;
+    --color-areia: #E4DCCD;
+    --color-terra: #2B211A;
+    --color-terra-media: #45372C;
+    --color-terra-suave: #5E554D;
+    --font-texto: "Atkinson Hyperlegible Next", sans-serif;
+    --font-titulo: "Archivo", sans-serif;
+    --font-dados: "Atkinson Hyperlegible Mono", monospace;
   }
 }
 @layer base {
@@ -311,17 +319,17 @@
     --tw-border-style: dashed;
     border-style: dashed;
   }
-  .border-\[\#2B211A\] {
-    border-color: #2B211A;
+  .border-terra {
+    border-color: var(--color-terra);
   }
-  .bg-\[\#2B211A\] {
-    background-color: #2B211A;
+  .bg-areia {
+    background-color: var(--color-areia);
   }
-  .bg-\[\#E4DCCD\] {
-    background-color: #E4DCCD;
+  .bg-palha {
+    background-color: var(--color-palha);
   }
-  .bg-\[\#EFEAE0\] {
-    background-color: #EFEAE0;
+  .bg-terra {
+    background-color: var(--color-terra);
   }
   .p-5 {
     padding: calc(var(--spacing) * 5);
@@ -353,14 +361,14 @@
   .text-center {
     text-align: center;
   }
-  .font-\[\'Archivo\'\,sans-serif\] {
-    font-family: 'Archivo',sans-serif;
+  .font-dados {
+    font-family: var(--font-dados);
   }
-  .font-\[\'Atkinson_Hyperlegible_Mono\'\,monospace\] {
-    font-family: 'Atkinson Hyperlegible Mono',monospace;
+  .font-texto {
+    font-family: var(--font-texto);
   }
-  .font-\[\'Atkinson_Hyperlegible_Next\'\,sans-serif\] {
-    font-family: 'Atkinson Hyperlegible Next',sans-serif;
+  .font-titulo {
+    font-family: var(--font-titulo);
   }
   .text-3xl {
     font-size: var(--text-3xl);
@@ -406,14 +414,14 @@
     --tw-tracking: var(--tracking-tight);
     letter-spacing: var(--tracking-tight);
   }
-  .text-\[\#2B211A\] {
-    color: #2B211A;
+  .text-palha {
+    color: var(--color-palha);
   }
-  .text-\[\#5E554D\] {
-    color: #5E554D;
+  .text-terra {
+    color: var(--color-terra);
   }
-  .text-\[\#EFEAE0\] {
-    color: #EFEAE0;
+  .text-terra-suave {
+    color: var(--color-terra-suave);
   }
   .underline {
     text-decoration-line: underline;
@@ -434,8 +442,8 @@
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   @media (hover: hover) {
-    .hover\:bg-\[\#45372C\]:hover {
-      background-color: #45372C;
+    .hover\:bg-terra-media:hover {
+      background-color: var(--color-terra-media);
     }
     .hover\:decoration-2:hover {
       text-decoration-thickness: 2px;
