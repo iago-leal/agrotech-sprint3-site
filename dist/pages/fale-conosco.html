@@ -25,8 +25,30 @@
       antialiased
     "
   >
-    <!-- Cabeçalho (menu) -->
-    <header></header>
+    <!-- Cabeçalho (menu) · CAL-9: igual em todas as páginas; em cada uma mudam só os caminhos e o link da página atual -->
+    <header class="border-b-2 border-terra">
+      <nav
+        class="max-w-7xl mx-auto px-4 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-x-8 gap-y-2"
+        aria-label="Menu principal"
+      >
+        <a href="../index.html" class="font-titulo text-2xl font-extrabold tracking-tight">Calibra</a>
+
+        <button
+          id="botao-menu"
+          type="button"
+          class="lg:hidden px-4 py-1.5 border-2 border-terra font-bold hover:bg-terra hover:text-palha transition-colors"
+          aria-expanded="false"
+          aria-controls="lista-menu"
+        >Menu</button>
+
+        <ul id="lista-menu" class="hidden w-full lg:flex lg:w-auto lg:gap-8">
+          <li><a href="../index.html" class="block py-2 lg:py-0 hover:text-terracota transition-colors">Início</a></li>
+          <li><a href="./enviar-laudo.html" class="block py-2 lg:py-0 hover:text-terracota transition-colors">Enviar laudo</a></li>
+          <li><a href="./recomendacao.html" class="block py-2 lg:py-0 hover:text-terracota transition-colors">Recomendação</a></li>
+          <li><a href="./fale-conosco.html" aria-current="page" class="block py-2 lg:py-0 font-bold text-terracota underline decoration-2 underline-offset-4">Fale Conosco</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <main id="conteudo" tabindex="-1">
       <!-- Página provisória (CAL-9): substitua esta seção pelo conteúdo da página -->
@@ -40,5 +62,6 @@
 
     <!-- Rodapé -->
     <footer></footer>
+    <script src="../js/menu.js"></script>
   </body>
 </html>
