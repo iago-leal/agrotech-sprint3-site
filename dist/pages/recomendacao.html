@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calibra | Recomendação</title>
+    <meta
+      name="description"
+      content="O resultado do talhão: a dose de calcário calculada a partir do laudo de solo, com a conta à mostra."
+    />
+
+    <!-- Fontes: Archivo (títulos), Atkinson Next (texto) e Atkinson Mono (dados) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..800&family=Atkinson+Hyperlegible+Mono:wght@400..700&family=Atkinson+Hyperlegible+Next:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS gerado pelo Tailwind -->
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+
+  <body
+    class="
+      bg-palha
+      text-terra
+      font-texto
+      antialiased
+    "
+  >
+    <!-- Cabeçalho (menu) · CAL-9: igual em todas as páginas; em cada uma mudam só os caminhos e o link da página atual -->
+    <header class="border-b-2 border-terra">
+      <nav
+        class="max-w-7xl mx-auto px-4 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-x-8 gap-y-2"
+        aria-label="Menu principal"
+      >
+        <a href="../index.html" class="font-titulo text-2xl font-extrabold tracking-tight">Calibra</a>
+
+        <button
+          id="botao-menu"
+          type="button"
+          class="lg:hidden px-4 py-1.5 border-2 border-terra font-bold hover:bg-terra hover:text-palha transition-colors"
+          aria-expanded="false"
+          aria-controls="lista-menu"
+        >Menu</button>
+
+        <ul id="lista-menu" class="hidden w-full lg:flex lg:w-auto lg:gap-8">
+          <li><a href="../index.html" class="block py-2 lg:py-0 hover:text-terracota transition-colors">Início</a></li>
+          <li><a href="./enviar-laudo.html" class="block py-2 lg:py-0 hover:text-terracota transition-colors">Enviar laudo</a></li>
+          <li><a href="./recomendacao.html" aria-current="page" class="block py-2 lg:py-0 font-bold text-terracota underline decoration-2 underline-offset-4">Recomendação</a></li>
+          <li><a href="./fale-conosco.html" class="block py-2 lg:py-0 hover:text-terracota transition-colors">Fale Conosco</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+
+      <!-- ============ Apresentação ============ -->
+      <section
+        class="
+          max-w-7xl mx-auto
+          px-4 lg:px-8
+          pt-8 pb-14 lg:pt-10 lg:pb-20
+          flex flex-col lg:flex-row
+          items-start lg:items-end
+          gap-6 lg:gap-14
+        "
+      >
+        <h1
+          class="
+            lg:w-3/5
+            text-4xl sm:text-5xl lg:text-6xl
+            font-extrabold font-titulo
+            leading-[1.06] tracking-tight
+          "
+        >
+          O resultado do seu talhão
+        </h1>
+
+        <div class="lg:w-2/5">
+          <p class="text-lg text-terra-suave leading-relaxed">
+            A dose de calcário calculada a partir dos números do laudo de solo. A conta fica à mostra: dá para refazer com o laudo na mão.
+          </p>
+          <p class="mt-3 text-sm font-dados">
+            NC (t/ha) = (V2 − V1) × CTC ÷ PRNT
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ============ O resultado ============ -->
+      <section class="py-14 lg:py-24 border-t-[1.5px] border-terra">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+          <h2 id="titulo-talhao" class="text-3xl lg:text-4xl font-bold font-titulo tracking-tight">
+            Talhão 1 · Soja
+          </h2>
+
+          <!-- O leitor precisa saber que os números são de exemplo, não de uma lavoura real -->
+          <p
+            id="aviso-exemplo"
+            class="
+              mt-5 inline-block
+              px-3 py-1.5
+              border-2 border-dashed border-terra
+              font-dados text-sm uppercase
+            "
+          >
+            Valores de exemplo
+          </p>
+
+          <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+            <article class="p-5 bg-areia border-[1.5px] border-terra">
+              <h3 class="text-sm font-bold uppercase text-terra-suave">
+                Dose de calcário recomendada
+              </h3>
+
+              <p class="mt-1 font-titulo font-extrabold leading-none">
+                <span id="valor-dose" class="text-6xl">2,17</span>
+                <span class="text-xl">t/ha</span>
+              </p>
+
+              <!-- Régua de 0 a 5 t/ha: 2,17 dividido por 5 dá os 43,5% da marca -->
+              <div class="relative mt-6 max-w-[420px]">
+                <div class="flex h-2.5">
+                  <div class="w-[30%] bg-trigo"></div>
+                  <div class="w-[30%] bg-terracota"></div>
+                  <div class="w-[40%] bg-terra"></div>
+                </div>
+                <div id="marca-regua" class="absolute -top-1 left-[43.5%] w-0.5 h-5 -ml-px bg-palha border-x-[1.5px] border-terra"></div>
+                <!-- Rótulos com as mesmas larguras das faixas (30%, 30% e 40%), para cada número ficar sobre a sua divisão;
+                     o -ml-[1.5ch] recua meio rótulo, e assim o "1,5" e o "3,0" ficam centrados na divisão -->
+                <div class="mt-1 flex font-dados text-xs text-terra-suave">
+                  <span class="w-[30%]">0</span>
+                  <span class="w-[30%]"><span class="-ml-[1.5ch]">1,5</span></span>
+                  <span class="w-[40%] flex justify-between"><span class="-ml-[1.5ch]">3,0</span><span>5,0</span></span>
+                </div>
+              </div>
+
+              <p id="faixa-dose" class="mt-6 text-terra-suave leading-relaxed">
+                A faixa do meio, de 1,5 a 3,0 toneladas por hectare, é onde esta dose caiu.
+              </p>
+            </article>
+
+            <article class="p-5 border-[1.5px] border-terra">
+              <h3 class="text-xl font-bold font-titulo">
+                Resumo do talhão
+              </h3>
+
+              <table class="mt-3 w-full text-left">
+                <tbody>
+                  <tr class="border-b-[1.5px] border-terra/20">
+                    <th class="py-2.5 pr-4 font-normal text-terra-suave">Total no talhão</th>
+                    <td id="total-talhao" class="py-2.5 text-right font-bold tabular-nums">40,0 t</td>
+                  </tr>
+                  <tr class="border-b-[1.5px] border-terra/20">
+                    <th class="py-2.5 pr-4 font-normal text-terra-suave">Área</th>
+                    <td id="area-talhao" class="py-2.5 text-right font-bold tabular-nums">18,4 ha</td>
+                  </tr>
+                  <tr>
+                    <th class="py-2.5 pr-4 font-normal text-terra-suave">Cálculo</th>
+                    <td id="conta-dose" class="py-2.5 text-right font-bold font-dados text-sm sm:text-base whitespace-nowrap">
+                      (60 − 38) × 8,4 ÷ 85
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============ O laudo que gerou a dose ============ -->
+      <section class="py-14 lg:py-24 border-t-[1.5px] border-terra">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+          <h2 class="text-3xl lg:text-4xl font-bold font-titulo tracking-tight">
+            O laudo que gerou a dose
+          </h2>
+
+          <p id="origem-laudo" class="mt-3.5 max-w-[68ch] text-lg text-terra-suave leading-relaxed">
+            Os cinco valores que entram na conta. No site pronto eles chegam da tela Enviar laudo; aqui estão preenchidos com um exemplo.
+          </p>
+
+          <!-- overflow-x-auto: em tela estreita a tabela rola em vez de estourar a página -->
+          <div class="mt-8 overflow-x-auto border-[1.5px] border-terra">
+            <table class="w-full text-left">
+              <thead>
+                <tr class="bg-areia border-b-[1.5px] border-terra font-dados text-xs uppercase">
+                  <th class="p-4 font-normal">Item</th>
+                  <th class="p-4 font-normal">Valor</th>
+                  <th class="p-4 font-normal">O que é</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b-[1.5px] border-terra/20">
+                  <td class="p-4">V% atual</td>
+                  <td id="laudo-v1" class="p-4 tabular-nums">38%</td>
+                  <td class="p-4">Saturação por bases do solo hoje</td>
+                </tr>
+                <tr class="border-b-[1.5px] border-terra/20">
+                  <td class="p-4">V% desejada</td>
+                  <td id="laudo-v2" class="p-4 tabular-nums">60%</td>
+                  <td class="p-4">Meta para a cultura</td>
+                </tr>
+                <tr class="border-b-[1.5px] border-terra/20">
+                  <td class="p-4">CTC a pH 7</td>
+                  <td id="laudo-ctc" class="p-4 tabular-nums">8,4 cmolc/dm³</td>
+                  <td class="p-4">Capacidade de troca de cátions</td>
+                </tr>
+                <tr class="border-b-[1.5px] border-terra/20">
+                  <td class="p-4">PRNT do calcário</td>
+                  <td id="laudo-prnt" class="p-4 tabular-nums">85%</td>
+                  <td class="p-4">Poder de neutralização do corretivo</td>
+                </tr>
+                <tr>
+                  <td class="p-4">Área do talhão</td>
+                  <td id="laudo-area" class="p-4 tabular-nums">18,4 ha</td>
+                  <td class="p-4">Tamanho da área a corrigir</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="mt-8 max-w-[68ch] text-terra-suave leading-relaxed">
+            A conta devolve a quantidade de corretivo. Frete, aplicação, parcelamento da dose e época de aplicação não entram nela. Confira a dose com um responsável técnico antes de aplicar.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Rodapé · CAL-9: igual em todas as páginas -->
+    <footer class="border-t-2 border-terra">
+      <div
+        class="max-w-7xl mx-auto px-4 lg:px-8 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8 text-terra-suave"
+      >
+        <div>
+          <p class="font-titulo text-2xl font-extrabold tracking-tight text-terra">Calibra</p>
+          <p class="mt-2">Protótipo acadêmico da AgroTech, Sprint 3.</p>
+        </div>
+
+        <div>
+          <p class="font-bold text-terra">Curso</p>
+          <p class="mt-2">Engenharia de Software · FIAP ON · 2026</p>
+        </div>
+
+        <div>
+          <p class="font-bold text-terra">Equipe</p>
+          <ul class="mt-2 space-y-1">
+            <li>Iago Bernardes Alves Leal Barbosa</li>
+            <li>Vinicius de Oliveira Gonçalves</li>
+            <li>João Eduardo Busar Pena</li>
+            <li>Plinio Arteman Pedra</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/menu.js"></script>
+    <script src="../js/recomendacao.js"></script>
+  </body>
+</html>
