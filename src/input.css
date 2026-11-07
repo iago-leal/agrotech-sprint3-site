@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+/*
+ * Paleta do Calibra (CAL-10), tirada do deck da Sprint 2 e dos tons que a Home já usa.
+ * Cada cor vira classe do Tailwind: bg-palha, text-terra, border-terracota, hover:bg-terra-media...
+ */
+@theme {
+  --color-palha: #EFEAE0;       /* fundo das páginas */
+  --color-areia: #E4DCCD;       /* fundo de cartões e faixas claras */
+  --color-terra: #2B211A;       /* texto principal, bordas e faixas escuras */
+  --color-terra-media: #45372C; /* faixas escuras ao passar o mouse */
+  --color-terra-suave: #5E554D; /* texto secundário */
+  --color-terracota: #A9481F;   /* destaque: botões, links e página atual no menu */
+  --color-folha: #4E7D32;       /* lavoura: confirmações e estados positivos (só texto grande, ícones e bordas) */
+  --color-trigo: #C8962E;       /* avisos e selos: só como fundo, com texto em terra; nunca texto sobre fundo claro */
+
+  /*
+   * Fontes (CAL-10), carregadas do Google Fonts no <head> de cada página.
+   * O <body> leva font-texto; os títulos usam font-titulo, e os números e dados, font-dados.
+   */
+  --font-texto: "Atkinson Hyperlegible Next", sans-serif;
+  --font-titulo: "Archivo", sans-serif;
+  --font-dados: "Atkinson Hyperlegible Mono", monospace;
+}

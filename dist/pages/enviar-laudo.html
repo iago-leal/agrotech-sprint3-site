@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calibra | Enviar laudo</title>
+
+    <!-- Fontes: Archivo (títulos), Atkinson Next (texto) e Atkinson Mono (dados) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..800&family=Atkinson+Hyperlegible+Mono:wght@400..700&family=Atkinson+Hyperlegible+Next:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS gerado pelo Tailwind -->
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+
+  <body
+    class="
+      bg-palha
+      text-terra
+      font-texto
+      antialiased
+    "
+  >
+    <!-- Cabeçalho (menu) · CAL-9: igual em todas as páginas; em cada uma mudam só os caminhos e o link da página atual -->
+    <header class="border-b-2 border-terra">
+      <nav
+        class="max-w-7xl mx-auto px-4 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-x-8 gap-y-2"
+        aria-label="Menu principal"
+      >
+        <a href="../index.html" class="font-titulo text-2xl font-extrabold tracking-tight">Calibra</a>
+
+        <button
+          id="botao-menu"
+          type="button"
+          class="lg:hidden px-4 py-1.5 border-2 border-terra font-bold hover:bg-terra hover:text-palha transition-colors"
+          aria-expanded="false"
+          aria-controls="lista-menu"
+        >Menu</button>
+
+        <ul id="lista-menu" class="hidden w-full lg:flex lg:w-auto lg:gap-8">
+          <li><a href="../index.html" class="block py-2 lg:py-0 hover:text-terracota transition-colors">Início</a></li>
+          <li><a href="./enviar-laudo.html" aria-current="page" class="block py-2 lg:py-0 font-bold text-terracota underline decoration-2 underline-offset-4">Enviar laudo</a></li>
+          <li><a href="./recomendacao.html" class="block py-2 lg:py-0 hover:text-terracota transition-colors">Recomendação</a></li>
+          <li><a href="./fale-conosco.html" class="block py-2 lg:py-0 hover:text-terracota transition-colors">Fale Conosco</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+      <!-- Página provisória (CAL-9): substitua esta seção pelo conteúdo da página -->
+      <section class="max-w-7xl mx-auto px-4 lg:px-8 pt-8 pb-14 lg:pt-10 lg:pb-20">
+        <h1 class="text-4xl sm:text-5xl font-extrabold font-titulo tracking-tight">
+          Enviar laudo
+        </h1>
+        <p class="mt-4 text-lg text-terra-suave">Página em construção.</p>
+      </section>
+    </main>
+
+    <!-- Rodapé · CAL-9: igual em todas as páginas -->
+    <footer class="border-t-2 border-terra">
+      <div
+        class="max-w-7xl mx-auto px-4 lg:px-8 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8 text-terra-suave"
+      >
+        <div>
+          <p class="font-titulo text-2xl font-extrabold tracking-tight text-terra">Calibra</p>
+          <p class="mt-2">Protótipo acadêmico da AgroTech, Sprint 3.</p>
+        </div>
+
+        <div>
+          <p class="font-bold text-terra">Curso</p>
+          <p class="mt-2">Engenharia de Software · FIAP ON · 2026</p>
+        </div>
+
+        <div>
+          <p class="font-bold text-terra">Equipe</p>
+          <ul class="mt-2 space-y-1">
+            <li>Iago Bernardes Alves Leal Barbosa</li>
+            <li>Vinicius de Oliveira Gonçalves</li>
+            <li>João Eduardo Busar Pena</li>
+            <li>Plinio Arteman Pedra</li>
+            <li>Pedro Henrique Conceição Venancio</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/menu.js"></script>
+  </body>
+</html>
