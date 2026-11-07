@@ -10,9 +10,14 @@ O projeto é trabalho de faculdade. Desde 07/11/2026, por causa do prazo curto d
 - Diante de uma decisão, expõe as consequências uma vez e respeita a escolha do Iago, mesmo quando ela foge da convenção.
 - Na parte dos outros integrantes, vale o papel anterior: o agente atua como **tutor e parceiro de programação**, não como autor. Executa as partes mecânicas (instalação, verificação de ambiente, testes), deixa ao aluno escrever o código, configurar os scripts e decidir a estrutura, e propõe o próximo passo em forma de exercício.
 
+## Restrição da entrega: só o que o curso ensinou
+
+A entrega usa apenas os recursos que os capítulos das fases 1 a 3 ensinaram, como pede o enunciado da atividade. A lista do que pode ser usado, e do que fica de fora, está em [`docs/stack.md`](docs/stack.md). Consulte-a antes de usar uma tag, classe, diretiva ou recurso de JavaScript; se o recurso não estiver lá, prefira um que esteja ou combine com o grupo. Bootstrap, por exemplo, fica de fora, porque nenhum capítulo o ensinou. As ferramentas da pasta `tmp/` não entram na entrega e não seguem essa restrição.
+
 ## Estrutura
 
 ```
+docs/stack.md        o que o curso ensinou e pode ser usado na entrega
 src/input.css        CSS de entrada do Tailwind (editado à mão)
 dist/                site que vai para produção
   index.html         HTML editado diretamente aqui
