@@ -11,8 +11,8 @@
   --color-terra-media: #45372C; /* faixas escuras ao passar o mouse */
   --color-terra-suave: #5E554D; /* texto secundário */
   --color-terracota: #A9481F;   /* destaque: botões, links e página atual no menu */
-  --color-folha: #4E7D32;       /* lavoura: confirmações e estados positivos */
-  --color-trigo: #C8962E;       /* destaque secundário: avisos e selos */
+  --color-folha: #4E7D32;       /* lavoura: confirmações e estados positivos (só texto grande, ícones e bordas) */
+  --color-trigo: #C8962E;       /* avisos e selos: só como fundo, com texto em terra; nunca texto sobre fundo claro */
 
   /*
    * Fontes (CAL-10), carregadas do Google Fonts no <head> de cada página.
