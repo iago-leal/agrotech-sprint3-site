@@ -109,7 +109,7 @@ function mostrarLaudo(laudo) {
 
   escrever("laudo-v1", formatar(v1, 0) + "%");
   escrever("laudo-v2", formatar(v2, 0) + "%");
-  escrever("laudo-ctc", formatar(ctc, 1));
+  escrever("laudo-ctc", formatar(ctc, 1) + " cmolc/dm³");
   escrever("laudo-prnt", formatar(prnt, 0) + "%");
   escrever("laudo-area", formatar(area, 1) + " ha");
 
