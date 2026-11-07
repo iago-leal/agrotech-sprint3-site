@@ -57,6 +57,9 @@ function escrever(id, texto) {
 
 /* Diz em qual das três faixas da régua a dose caiu. */
 function descreverFaixa(dose) {
+  if (dose === 0) {
+    return "A saturação por bases já está na meta ou acima dela: a conta não pede calcário para este talhão.";
+  }
   if (dose < 1.5) {
     return "A faixa de baixo, até 1,5 tonelada por hectare, é onde esta dose caiu.";
   }
@@ -85,7 +88,14 @@ function mostrarLaudo(laudo) {
     return;
   }
 
-  const dose = ((v2 - v1) * ctc) / prnt;
+  let dose = ((v2 - v1) * ctc) / prnt;
+
+  /* Com a V% atual igual ou acima da desejada, a conta dá zero ou negativo:
+     o solo já está na meta e a dose é zero, nunca uma quantidade negativa. */
+  if (dose < 0) {
+    dose = 0;
+  }
+
   const total = dose * area;
 
   /* Título: "Talhão 1 · Soja", com a cultura só quando ela vem junto. */
