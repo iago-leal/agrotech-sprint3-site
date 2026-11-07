@@ -1,5 +1,5 @@
-// Fale Conosco (CAL-29): confirma o envio na tela, sem servidor.
-// O navegador só dispara o "submit" quando todos os campos passam na validação do HTML5 (CAL-28),
+// Fale Conosco: confirma o envio na tela, sem servidor.
+// O navegador só dispara o "submit" quando todos os campos passam na validação do HTML5,
 // então este código roda apenas com dados válidos.
 const formulario = document.querySelector("#formulario-contato");
 const campoNome = document.querySelector("#nome");

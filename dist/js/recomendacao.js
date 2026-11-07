@@ -1,17 +1,9 @@
-/*
- * Recomendação · lê o laudo que a tela Enviar laudo manda pela URL.
- *
- * Sem laudo na URL a página fica como está no HTML: um exemplo, com o aviso
- * "Valores de exemplo" à mostra. Com laudo, os números do exemplo dão lugar
- * aos do laudo e o aviso sai da tela.
- *
- * Endereço que esta tela espera receber:
- *   recomendacao.html?talhao=Talhao+1&cultura=Soja&v1=38&v2=60&ctc=8.4&prnt=85&area=18.4
- *
- * A conta é a mesma do laudo: NC (t/ha) = (V2 - V1) x CTC / PRNT
- */
+// Recomendação: lê o laudo que a tela Enviar laudo manda pela URL.
+// Sem laudo na URL a página fica como está no HTML (com o aviso "Valores de exemplo").
+// Com laudo, os números do exemplo dão lugar aos do laudo e o aviso sai da tela.
+// Conta da calagem: NC (t/ha) = (V2 - V1) x CTC / PRNT
 
-/* Quebra o trecho da URL depois do "?" e devolve um objeto {campo: valor}. */
+// Quebra o trecho da URL depois do "?" e devolve um objeto {campo: valor}.
 function lerEndereco(busca) {
   const dados = {};
 
@@ -34,7 +26,7 @@ function lerEndereco(busca) {
   return dados;
 }
 
-/* Converte o texto que veio da URL em número. Aceita vírgula ou ponto. */
+// Converte o texto que veio da URL em número. Aceita vírgula ou ponto.
 function virarNumero(texto) {
   if (texto === undefined || texto === "") {
     return NaN;
@@ -42,12 +34,12 @@ function virarNumero(texto) {
   return Number(texto.split(",").join("."));
 }
 
-/* Escreve o número no jeito do Brasil, com vírgula no lugar do ponto. */
+// Escreve o número no padrão brasileiro, com vírgula no lugar do ponto.
 function formatar(numero, casas) {
   return numero.toFixed(casas).split(".").join(",");
 }
 
-/* Troca o texto de um elemento, quando ele existe na página. */
+// Troca o texto de um elemento, quando ele existe na página.
 function escrever(id, texto) {
   const elemento = document.getElementById(id);
   if (elemento !== null) {
@@ -55,7 +47,7 @@ function escrever(id, texto) {
   }
 }
 
-/* Diz em qual das três faixas da régua a dose caiu. */
+// Diz em qual das três faixas da régua a dose caiu.
 function descreverFaixa(dose) {
   if (dose === 0) {
     return "A saturação por bases já está na meta ou acima dela: a conta não pede calcário para este talhão.";
@@ -69,7 +61,7 @@ function descreverFaixa(dose) {
   return "A faixa de cima, acima de 3,0 toneladas por hectare, é onde esta dose caiu.";
 }
 
-/* Põe o laudo recebido na tela. */
+// Põe o laudo recebido na tela.
 function mostrarLaudo(laudo) {
   const v1 = virarNumero(laudo.v1);
   const v2 = virarNumero(laudo.v2);
@@ -77,7 +69,7 @@ function mostrarLaudo(laudo) {
   const prnt = virarNumero(laudo.prnt);
   const area = virarNumero(laudo.area);
 
-  /* Faltando um número, ou com PRNT zerado, a conta não fecha: fica o exemplo. */
+  // Faltando um número, ou com PRNT zerado, a conta não fecha: fica o exemplo.
   const numeros = [v1, v2, ctc, prnt, area];
   for (let i = 0; i < numeros.length; i++) {
     if (isNaN(numeros[i])) {
@@ -90,15 +82,15 @@ function mostrarLaudo(laudo) {
 
   let dose = ((v2 - v1) * ctc) / prnt;
 
-  /* Com a V% atual igual ou acima da desejada, a conta dá zero ou negativo:
-     o solo já está na meta e a dose é zero, nunca uma quantidade negativa. */
+  // Com a V% atual igual ou acima da desejada, a conta dá zero ou negativo:
+  // o solo já está na meta e a dose é zero, nunca uma quantidade negativa.
   if (dose < 0) {
     dose = 0;
   }
 
   const total = dose * area;
 
-  /* Título: "Talhão 1 · Soja", com a cultura só quando ela vem junto. */
+  // Título: "Talhão 1 · Soja", com a cultura só quando ela vem junto.
   let titulo = laudo.talhao;
   if (titulo === undefined || titulo === "") {
     titulo = "Talhão sem nome";
@@ -125,7 +117,7 @@ function mostrarLaudo(laudo) {
 
   escrever("origem-laudo", "Os cinco valores que entram na conta, como vieram da tela Enviar laudo.");
 
-  /* A régua vai de 0 a 5 t/ha. Acima disso a marca para na ponta. */
+  // A régua vai de 0 a 5 t/ha. Acima disso a marca para na ponta.
   let posicao = (dose / 5) * 100;
   if (posicao < 0) {
     posicao = 0;
@@ -138,7 +130,7 @@ function mostrarLaudo(laudo) {
     marca.style.left = posicao + "%";
   }
 
-  /* Com laudo de verdade na tela, o aviso de exemplo não cabe mais. */
+  // Com laudo de verdade na tela, o aviso de exemplo não cabe mais.
   const aviso = document.getElementById("aviso-exemplo");
   if (aviso !== null) {
     aviso.remove();

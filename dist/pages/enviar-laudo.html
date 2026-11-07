@@ -25,33 +25,102 @@
       antialiased
     "
   >
-    <!-- Cabeçalho (menu) · CAL-9: igual em todas as páginas; em cada uma mudam só os caminhos e o link da página atual -->
+    <!-- Cabeçalho (menu) -->
     <header class="border-b-2 border-terra">
       <nav
-        class="max-w-7xl mx-auto px-4 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-x-8 gap-y-2"
         aria-label="Menu principal"
+        class="
+          max-w-7xl mx-auto
+          px-4 lg:px-8 py-4
+          flex flex-wrap items-center justify-between
+          gap-x-8 gap-y-2
+        "
       >
-        <a href="../index.html" class="font-titulo text-2xl font-extrabold tracking-tight">Calibra</a>
+        <a
+          href="../index.html"
+          class="text-2xl font-extrabold font-titulo tracking-tight"
+        >
+          Calibra
+        </a>
 
         <button
           id="botao-menu"
           type="button"
-          class="lg:hidden px-4 py-1.5 border-2 border-terra font-bold hover:bg-terra hover:text-palha transition-colors"
           aria-expanded="false"
           aria-controls="lista-menu"
-        >Menu</button>
+          class="
+            lg:hidden
+            px-4 py-1.5
+            border-2 border-terra
+            font-bold
+            hover:bg-terra hover:text-palha
+            transition-colors
+          "
+        >
+          Menu
+        </button>
 
         <ul id="lista-menu" class="hidden w-full lg:flex lg:w-auto lg:gap-8">
-          <li><a href="../index.html" class="block py-2 lg:py-0 hover:text-terracota transition-colors">Início</a></li>
-          <li><a href="./enviar-laudo.html" aria-current="page" class="block py-2 lg:py-0 font-bold text-terracota underline decoration-2 underline-offset-4">Enviar laudo</a></li>
-          <li><a href="./recomendacao.html" class="block py-2 lg:py-0 hover:text-terracota transition-colors">Recomendação</a></li>
-          <li><a href="./fale-conosco.html" class="block py-2 lg:py-0 hover:text-terracota transition-colors">Fale Conosco</a></li>
+          <li>
+            <a
+              href="../index.html"
+              class="
+                block py-2 lg:py-0
+                hover:text-terracota
+                transition-colors
+              "
+            >
+              Início
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="./enviar-laudo.html"
+              aria-current="page"
+              class="
+                block py-2 lg:py-0
+                font-bold text-terracota
+                underline decoration-2 underline-offset-4
+              "
+            >
+              Enviar laudo
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="./recomendacao.html"
+              class="
+                block py-2 lg:py-0
+                hover:text-terracota
+                transition-colors
+              "
+            >
+              Recomendação
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="./fale-conosco.html"
+              class="
+                block py-2 lg:py-0
+                hover:text-terracota
+                transition-colors
+              "
+            >
+              Fale Conosco
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
 
     <main id="conteudo" tabindex="-1">
-      <!-- O produtor digita os números do laudo; o laudo.js leva tudo para a tela Recomendação pela URL -->
+
+
+      <!-- ============ Enviar laudo ============ -->
       <section
         class="
           max-w-7xl mx-auto
@@ -62,12 +131,20 @@
         "
       >
         <div class="lg:col-span-2">
-          <h1 class="text-4xl sm:text-5xl font-extrabold font-titulo tracking-tight">
+          <h1
+            class="
+              text-4xl sm:text-5xl
+              font-extrabold font-titulo
+              tracking-tight
+            "
+          >
             Enviar laudo
           </h1>
+
           <p class="mt-4 text-lg text-terra-suave leading-relaxed">
             Digite os números do laudo de solo e do calcário. O Calibra calcula quanto calcário o talhão precisa.
           </p>
+
           <p class="mt-3 text-sm font-dados">
             NC (t/ha) = (V2 − V1) × CTC ÷ PRNT
           </p>
@@ -78,20 +155,46 @@
             id="formulario-laudo"
             class="
               p-5 sm:p-8
-              bg-areia
-              border-2 border-terra
               grid grid-cols-1 sm:grid-cols-2
               gap-5
+              bg-areia
+              border-2 border-terra
             "
           >
+            <!-- Talhão -->
             <div>
               <label for="talhao" class="font-bold">Talhão</label>
-              <input id="talhao" name="talhao" type="text" required placeholder="Talhão 1" class="mt-2 w-full px-3 py-2.5 bg-palha border-2 border-terra rounded-xs text-base" />
+              <input
+                id="talhao"
+                name="talhao"
+                type="text"
+                required
+                placeholder="Talhão 1"
+                class="
+                  mt-2 w-full
+                  px-3 py-2.5
+                  bg-palha
+                  border-2 border-terra rounded-xs
+                  text-base
+                "
+              />
             </div>
 
+            <!-- Cultura -->
             <div>
               <label for="cultura" class="font-bold">Cultura</label>
-              <select id="cultura" name="cultura" required class="mt-2 w-full px-3 py-2.5 bg-palha border-2 border-terra rounded-xs text-base">
+              <select
+                id="cultura"
+                name="cultura"
+                required
+                class="
+                  mt-2 w-full
+                  px-3 py-2.5
+                  bg-palha
+                  border-2 border-terra rounded-xs
+                  text-base
+                "
+              >
                 <option value="">Escolha a cultura</option>
                 <option>Soja</option>
                 <option>Milho</option>
@@ -102,32 +205,124 @@
               </select>
             </div>
 
+            <!-- V% atual -->
             <div>
               <label for="v1" class="font-bold">V% atual</label>
-              <input id="v1" name="v1" type="number" required min="0" max="100" step="0.1" placeholder="38" aria-describedby="dica-v1" class="mt-2 w-full px-3 py-2.5 bg-palha border-2 border-terra rounded-xs text-base" />
-              <p id="dica-v1" class="mt-1 text-sm text-terra-suave">Saturação por bases que o laudo mostra.</p>
+              <input
+                id="v1"
+                name="v1"
+                type="number"
+                required
+                min="0"
+                max="100"
+                step="0.1"
+                placeholder="38"
+                aria-describedby="dica-v1"
+                class="
+                  mt-2 w-full
+                  px-3 py-2.5
+                  bg-palha
+                  border-2 border-terra rounded-xs
+                  text-base
+                "
+              />
+              <p id="dica-v1" class="mt-1 text-sm text-terra-suave">
+                Saturação por bases que o laudo mostra.
+              </p>
             </div>
 
+            <!-- V% desejada -->
             <div>
               <label for="v2" class="font-bold">V% desejada</label>
-              <input id="v2" name="v2" type="number" required min="0" max="100" step="0.1" placeholder="60" aria-describedby="dica-v2" class="mt-2 w-full px-3 py-2.5 bg-palha border-2 border-terra rounded-xs text-base" />
-              <p id="dica-v2" class="mt-1 text-sm text-terra-suave">Meta para a cultura escolhida.</p>
+              <input
+                id="v2"
+                name="v2"
+                type="number"
+                required
+                min="0"
+                max="100"
+                step="0.1"
+                placeholder="60"
+                aria-describedby="dica-v2"
+                class="
+                  mt-2 w-full
+                  px-3 py-2.5
+                  bg-palha
+                  border-2 border-terra rounded-xs
+                  text-base
+                "
+              />
+              <p id="dica-v2" class="mt-1 text-sm text-terra-suave">
+                Meta para a cultura escolhida.
+              </p>
             </div>
 
+            <!-- CTC -->
             <div>
               <label for="ctc" class="font-bold">CTC a pH 7 (cmolc/dm³)</label>
-              <input id="ctc" name="ctc" type="number" required min="0.1" step="0.1" placeholder="8,4" class="mt-2 w-full px-3 py-2.5 bg-palha border-2 border-terra rounded-xs text-base" />
+              <input
+                id="ctc"
+                name="ctc"
+                type="number"
+                required
+                min="0.1"
+                step="0.1"
+                placeholder="8,4"
+                class="
+                  mt-2 w-full
+                  px-3 py-2.5
+                  bg-palha
+                  border-2 border-terra rounded-xs
+                  text-base
+                "
+              />
             </div>
 
+            <!-- PRNT -->
             <div>
               <label for="prnt" class="font-bold">PRNT do calcário (%)</label>
-              <input id="prnt" name="prnt" type="number" required min="1" max="100" step="0.1" placeholder="85" aria-describedby="dica-prnt" class="mt-2 w-full px-3 py-2.5 bg-palha border-2 border-terra rounded-xs text-base" />
-              <p id="dica-prnt" class="mt-1 text-sm text-terra-suave">Vem no laudo do lote de calcário.</p>
+              <input
+                id="prnt"
+                name="prnt"
+                type="number"
+                required
+                min="1"
+                max="100"
+                step="0.1"
+                placeholder="85"
+                aria-describedby="dica-prnt"
+                class="
+                  mt-2 w-full
+                  px-3 py-2.5
+                  bg-palha
+                  border-2 border-terra rounded-xs
+                  text-base
+                "
+              />
+              <p id="dica-prnt" class="mt-1 text-sm text-terra-suave">
+                Vem no laudo do lote de calcário.
+              </p>
             </div>
 
+            <!-- Área -->
             <div>
               <label for="area" class="font-bold">Área do talhão (ha)</label>
-              <input id="area" name="area" type="number" required min="0.1" step="0.1" placeholder="18,4" class="mt-2 w-full px-3 py-2.5 bg-palha border-2 border-terra rounded-xs text-base" />
+              <input
+                id="area"
+                name="area"
+                type="number"
+                required
+                min="0.1"
+                step="0.1"
+                placeholder="18,4"
+                class="
+                  mt-2 w-full
+                  px-3 py-2.5
+                  bg-palha
+                  border-2 border-terra rounded-xs
+                  text-base
+                "
+              />
             </div>
 
             <div class="sm:col-span-2">
@@ -147,15 +342,25 @@
           </form>
         </div>
       </section>
+
+
     </main>
 
-    <!-- Rodapé · CAL-9: igual em todas as páginas -->
+    <!-- Rodapé -->
     <footer class="border-t-2 border-terra">
       <div
-        class="max-w-7xl mx-auto px-4 lg:px-8 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8 text-terra-suave"
+        class="
+          max-w-7xl mx-auto
+          px-4 lg:px-8 py-10
+          grid grid-cols-1 lg:grid-cols-3
+          gap-8
+          text-terra-suave
+        "
       >
         <div>
-          <p class="font-titulo text-2xl font-extrabold tracking-tight text-terra">Calibra</p>
+          <p class="text-2xl font-extrabold font-titulo tracking-tight text-terra">
+            Calibra
+          </p>
           <p class="mt-2">Protótipo acadêmico da AgroTech, Sprint 3.</p>
         </div>
 
@@ -175,6 +380,7 @@
         </div>
       </div>
     </footer>
+
     <script src="../js/menu.js"></script>
     <script src="../js/laudo.js"></script>
   </body>
