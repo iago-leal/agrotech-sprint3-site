@@ -32,6 +32,7 @@ No ramo `feat/base-iago`, na máquina do Iago, a pasta `tmp/` guarda o andamento
 - `tmp/etapas.py`: o único meio de alterar o arquivo. Nunca editar `tmp/etapas.md` à mão: a última linha do arquivo leva uma soma de verificação, e o script recusa o arquivo alterado por fora.
 - O agente consulta o arquivo antes de começar uma etapa e o atualiza pelo script ao começá-la e ao terminá-la.
 - O acompanhamento é pessoal e não substitui o Jira, onde o grupo continua marcando o que está concluído. O script nunca escreve no Jira.
+- `tmp/servidor.py`: prévia local em http://127.0.0.1:8130, só com a biblioteca padrão do Python. Serve `dist/` e recarrega a página sozinho quando um arquivo muda; se só o CSS muda, troca o CSS sem recarregar. Roda junto com o `--watch` do Tailwind.
 
 As etapas são identificadas pelo número da tarefa e da etapa (`10.1` ou `CAL-10.1`):
 
