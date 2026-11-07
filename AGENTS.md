@@ -14,9 +14,14 @@ O projeto é trabalho de faculdade. Desde 07/11/2026, por causa do prazo curto d
 
 A entrega usa apenas os recursos que os capítulos das fases 1 a 3 ensinaram, como pede o enunciado da atividade. A lista do que pode ser usado, e do que fica de fora, está em [`docs/stack.md`](docs/stack.md). Consulte-a antes de usar uma tag, classe, diretiva ou recurso de JavaScript; se o recurso não estiver lá, prefira um que esteja ou combine com o grupo. Bootstrap, por exemplo, fica de fora, porque nenhum capítulo o ensinou. As ferramentas da pasta `tmp/` não entram na entrega e não seguem essa restrição.
 
+## Escopo da atividade
+
+Os requisitos da atividade (site, pitch-vídeo e forma de entrega) estão em [`docs/atividade.md`](docs/atividade.md), cada um com um código (S1, V1, E1...) e o jeito de conferir. Antes de acrescentar uma página, seção ou funcionalidade, confira se ela cabe nesse escopo; o limite de 5 páginas, por exemplo, vale para o site inteiro. A conferência final da entrega (CAL-12) percorre essa lista item por item.
+
 ## Estrutura
 
 ```
+docs/atividade.md    requisitos da atividade e como conferir cada um
 docs/stack.md        o que o curso ensinou e pode ser usado na entrega
 src/input.css        CSS de entrada do Tailwind (editado à mão)
 dist/                site que vai para produção
