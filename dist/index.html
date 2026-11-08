@@ -130,56 +130,343 @@
           max-w-7xl mx-auto
           px-4 lg:px-8
           pt-8 pb-14 lg:pt-10 lg:pb-20
-          flex flex-col lg:flex-row
-          items-start lg:items-end
-          gap-6 lg:gap-14
         "
       >
-        <h1
+        <div
           class="
-            lg:w-3/5
-            text-4xl sm:text-5xl lg:text-6xl
-            font-extrabold font-titulo
-            leading-[1.06] tracking-tight
+            flex flex-col lg:flex-row
+            items-start lg:items-end
+            gap-6 lg:gap-14
           "
         >
-          Quanto calcário cada talhão precisa
-        </h1>
+          <h1
+            class="
+              lg:w-3/5
+              text-4xl sm:text-5xl lg:text-6xl
+              font-extrabold font-titulo
+              leading-[1.06] tracking-tight
+            "
+          >
+            Quanto calcário cada talhão precisa
+          </h1>
 
-        <div class="lg:w-2/5">
-          <p class="text-lg text-terra-suave leading-relaxed">
-            Digite os números do laudo de solo e escolha o lote de calcário. O Calibra faz a conta à vista, e um engenheiro agrônomo valida antes de virar recomendação.
-          </p>
+          <div class="lg:w-2/5">
+            <p class="text-lg text-terra-suave leading-relaxed">
+              Digite os números do laudo de solo e escolha o lote de calcário. O Calibra faz a conta à vista, e um engenheiro agrônomo valida antes de virar recomendação.
+            </p>
 
-          <div class="mt-5 flex flex-wrap items-center gap-3">
-            <a
-              href="#proposta"
-              class="
-                w-full sm:w-auto min-h-12
-                inline-flex items-center justify-center
-                px-6 py-3 rounded-xs
-                bg-terra hover:bg-terra-media
-                text-palha font-bold
-                transition-colors
-              "
-            >
-              Conhecer a proposta
-            </a>
+            <div class="mt-5 flex flex-wrap items-center gap-3">
+              <a
+                href="./pages/enviar-laudo.html"
+                class="
+                  w-full sm:w-auto min-h-12
+                  inline-flex items-center justify-center
+                  px-6 py-3 rounded-xs
+                  bg-terra hover:bg-terra-media
+                  text-palha font-bold
+                  transition-colors
+                "
+              >
+                Calcular a dose do meu talhão
+              </a>
 
-            <a
-              href="#pitch-video"
-              class="
-                min-h-12 px-2
-                inline-flex items-center
-                font-semibold
-                underline decoration-[1.5px] underline-offset-4
-                hover:decoration-2
-              "
-            >
-              Ver o pitch em vídeo
-            </a>
+              <a
+                href="#pitch-video"
+                class="
+                  min-h-12 px-2
+                  inline-flex items-center
+                  font-semibold
+                  underline decoration-[1.5px] underline-offset-4
+                  hover:decoration-2
+                "
+              >
+                Ver o pitch em vídeo
+              </a>
+            </div>
           </div>
         </div>
+
+        <!-- Painel de calagem por talhão (exemplo interativo em Grid) -->
+        <div class="mt-10 border-2 border-terra bg-palha">
+
+          <!-- Barra superior -->
+          <div
+            class="
+              px-4 py-2.5
+              flex flex-wrap items-baseline justify-between
+              gap-x-4 gap-y-1
+              bg-areia
+              border-b-2 border-terra
+            "
+          >
+            <h2 class="text-base font-bold font-titulo">
+              Necessidade de calagem por talhão · Fazenda Boa Esperança
+            </h2>
+            <span class="text-xs font-dados text-terra-suave">
+              21°10′S · 47°49′W · exemplo ilustrativo
+            </span>
+          </div>
+
+          <!-- Grade de talhões à esquerda + Ficha e legenda à direita -->
+          <div class="grid grid-cols-1 lg:grid-cols-3">
+
+            <!-- Grade dos 5 talhões e Reserva legal -->
+            <div
+              class="
+                lg:col-span-2 p-4
+                grid grid-cols-1 sm:grid-cols-3
+                gap-3
+                border-b-2 lg:border-b-0 lg:border-r-2 border-terra
+              "
+            >
+              <!-- Talhão 1 -->
+              <button
+                id="talhao-0"
+                type="button"
+                aria-pressed="true"
+                class="
+                  min-h-32 p-4
+                  flex flex-col items-center justify-center
+                  bg-terracota
+                  border-4 border-dashed border-terra
+                  text-palha text-center
+                  cursor-pointer transition-colors
+                "
+              >
+                <span class="text-sm font-bold">Talhão 1 · Soja</span>
+                <span class="mt-1 text-2xl font-extrabold font-titulo">
+                  <span id="dose-talhao-0">2,17</span>
+                  <span class="text-sm font-normal font-texto">t/ha</span>
+                </span>
+              </button>
+
+              <!-- Talhão 2 -->
+              <button
+                id="talhao-1"
+                type="button"
+                aria-pressed="false"
+                class="
+                  min-h-32 p-4
+                  flex flex-col items-center justify-center
+                  bg-trigo
+                  border-2 border-terra
+                  text-terra text-center
+                  cursor-pointer transition-colors
+                "
+              >
+                <span class="text-sm font-bold">Talhão 2 · Milho</span>
+                <span class="mt-1 text-2xl font-extrabold font-titulo">
+                  <span id="dose-talhao-1">1,27</span>
+                  <span class="text-sm font-normal font-texto">t/ha</span>
+                </span>
+              </button>
+
+              <!-- Reserva legal (área preservada, sem aplicação) -->
+              <div
+                class="
+                  min-h-32 p-4
+                  flex flex-col items-center justify-center
+                  bg-areia
+                  border-2 border-dashed border-terra
+                  text-terra-suave text-center
+                "
+              >
+                <span class="text-sm font-bold text-terra">Reserva legal</span>
+                <span class="mt-1 text-xs">Área preservada</span>
+              </div>
+
+              <!-- Talhão 3 -->
+              <button
+                id="talhao-2"
+                type="button"
+                aria-pressed="false"
+                class="
+                  min-h-32 p-4
+                  flex flex-col items-center justify-center
+                  bg-terra
+                  border-2 border-terra
+                  text-palha text-center
+                  cursor-pointer transition-colors
+                "
+              >
+                <span class="text-sm font-bold">Talhão 3 · Soja</span>
+                <span class="mt-1 text-2xl font-extrabold font-titulo">
+                  <span id="dose-talhao-2">3,28</span>
+                  <span class="text-sm font-normal font-texto">t/ha</span>
+                </span>
+              </button>
+
+              <!-- Talhão 4 -->
+              <button
+                id="talhao-3"
+                type="button"
+                aria-pressed="false"
+                class="
+                  min-h-32 p-4
+                  flex flex-col items-center justify-center
+                  bg-trigo
+                  border-2 border-terra
+                  text-terra text-center
+                  cursor-pointer transition-colors
+                "
+              >
+                <span class="text-sm font-bold">Talhão 4 · Café</span>
+                <span class="mt-1 text-2xl font-extrabold font-titulo">
+                  <span id="dose-talhao-3">0,48</span>
+                  <span class="text-sm font-normal font-texto">t/ha</span>
+                </span>
+              </button>
+
+              <!-- Talhão 5 -->
+              <button
+                id="talhao-4"
+                type="button"
+                aria-pressed="false"
+                class="
+                  min-h-32 p-4
+                  flex flex-col items-center justify-center
+                  bg-palha
+                  border-2 border-terra
+                  text-terra text-center
+                  cursor-pointer transition-colors
+                "
+              >
+                <span class="text-sm font-bold">Talhão 5 · Feijão</span>
+                <span class="mt-1 text-2xl font-extrabold font-titulo">
+                  <span id="dose-talhao-4">0,00</span>
+                  <span class="text-sm font-normal font-texto">t/ha</span>
+                </span>
+              </button>
+            </div>
+
+            <!-- Coluna lateral: Ficha do talhão + Legenda -->
+            <div>
+              <!-- Ficha do talhão selecionado -->
+              <div class="p-5 border-b-2 border-terra">
+                <p id="q-nome" class="text-lg font-bold font-titulo">
+                  Talhão 1 · Soja
+                </p>
+
+                <p id="q-dados" class="mt-1 text-xs font-dados text-terra-suave">
+                  18,4 ha · V% 38 · CTC 8,4
+                </p>
+
+                <p class="mt-3 font-extrabold font-titulo leading-none">
+                  <span id="q-dose" class="text-5xl">2,17</span>
+                  <span class="text-base font-bold font-texto text-terra-suave">t/ha</span>
+                </p>
+
+                <p id="q-total" class="mt-2">
+                  40,0 t no talhão
+                </p>
+
+                <p id="q-conta" class="mt-1 text-sm font-dados">
+                  (60 − 38) × 8,4 ÷ 85
+                </p>
+
+                <p
+                  class="
+                    mt-3 inline-block
+                    px-2.5 py-1
+                    border-2 border-dashed border-terra
+                    text-xs font-bold font-dados uppercase
+                  "
+                >
+                  Aguardando o agrônomo
+                </p>
+              </div>
+
+              <!-- Legenda de faixas -->
+              <div class="p-5">
+                <h3 class="text-sm font-bold font-titulo">
+                  Dose de calcário (t/ha)
+                </h3>
+
+                <ul class="mt-2.5 space-y-1 text-sm">
+                  <li id="legenda-c0" class="px-2 py-1 flex items-center gap-2.5">
+                    <span class="w-6 h-4 bg-palha border border-terra"></span>
+                    <span>Sem necessidade</span>
+                  </li>
+
+                  <li id="legenda-c1" class="px-2 py-1 flex items-center gap-2.5">
+                    <span class="w-6 h-4 bg-trigo border border-terra"></span>
+                    <span>Até 1,5</span>
+                  </li>
+
+                  <li
+                    id="legenda-c2"
+                    class="px-2 py-1 flex items-center gap-2.5 bg-areia font-bold"
+                  >
+                    <span class="w-6 h-4 bg-terracota border border-terra"></span>
+                    <span>De 1,5 a 3,0</span>
+                  </li>
+
+                  <li id="legenda-c3" class="px-2 py-1 flex items-center gap-2.5">
+                    <span class="w-6 h-4 bg-terra border border-terra"></span>
+                    <span>Acima de 3,0</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Barra inferior de controles -->
+          <div
+            class="
+              px-4 py-3
+              flex flex-col sm:flex-row flex-wrap sm:items-center
+              gap-4 sm:gap-8
+              bg-areia
+              border-t-2 border-terra
+              text-sm
+            "
+          >
+            <div class="flex flex-wrap items-center gap-3">
+              <label for="meta-v2" class="font-bold">
+                Meta de saturação (V%)
+              </label>
+              <input
+                id="meta-v2"
+                type="range"
+                min="40"
+                max="80"
+                step="1"
+                value="60"
+                class="w-36 accent-terra cursor-pointer"
+              />
+              <span id="meta-valor" class="font-bold font-dados">60%</span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3">
+              <label for="lote-prnt" class="font-bold">
+                Lote de calcário
+              </label>
+              <select
+                id="lote-prnt"
+                class="
+                  px-3 py-1.5
+                  bg-palha
+                  border-2 border-terra rounded-xs
+                  font-dados text-sm
+                "
+              >
+                <option value="85">CL-2310 · PRNT 85%</option>
+                <option value="92">CL-2318 · PRNT 92%</option>
+              </select>
+            </div>
+
+            <p class="sm:ml-auto">
+              Fazenda inteira:
+              <strong id="total-fazenda" class="font-bold font-dados">136,9 t</strong>
+            </p>
+          </div>
+
+        </div>
+
+        <p class="mt-2.5 text-sm text-terra-suave">
+          Clique num talhão para ver a conta dele. Mude a meta ou o lote e o painel recalcula as doses.
+        </p>
       </section>
 
 
@@ -252,6 +539,194 @@
               </p>
             </article>
 
+          </div>
+
+          <!-- Equação em destaque e exemplo prático -->
+          <div class="mt-12 pt-10 border-t-[1.5px] border-terra/20">
+            <h3 class="text-2xl lg:text-3xl font-bold font-titulo tracking-tight">
+              De onde vem cada número
+            </h3>
+
+            <p
+              class="
+                mt-2.5 max-w-[68ch]
+                text-terra-suave leading-relaxed
+              "
+            >
+              Toda dose sai da mesma fórmula, o método da saturação por bases. Nenhum número fica escondido: dá para refazer a conta com o laudo na mão.
+            </p>
+
+            <p
+              class="
+                mt-6
+                text-3xl sm:text-4xl
+                font-extrabold font-titulo
+                tracking-tight
+              "
+            >
+              NC = (V2 − V1) × CTC ÷ PRNT
+            </p>
+
+            <p class="mt-2 text-base font-dados text-terra-suave">
+              Exemplo (<span id="exemplo-talhao">Talhão 1 · Soja</span>):
+              <span id="exemplo-conta">(60 − 38) × 8,4 ÷ 85</span> =
+              <strong id="exemplo-dose" class="font-bold text-terra">2,17 t/ha</strong>
+            </p>
+
+            <!-- Quadro de origem de cada variável -->
+            <div class="mt-8 overflow-x-auto border-[1.5px] border-terra">
+              <table class="w-full text-left">
+                <thead>
+                  <tr
+                    class="
+                      bg-areia
+                      border-b-[1.5px] border-terra
+                      text-xs font-dados uppercase
+                    "
+                  >
+                    <th scope="col" class="p-4 font-normal">Termo</th>
+                    <th scope="col" class="p-4 font-normal">O que é</th>
+                    <th scope="col" class="p-4 font-normal">De onde vem</th>
+                    <th scope="col" class="p-4 font-normal">Onde fica no Calibra</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr class="border-b-[1.5px] border-terra/20">
+                    <th scope="row" class="p-4 font-bold font-dados whitespace-nowrap">
+                      V1
+                    </th>
+                    <td class="p-4">Saturação por bases atual do solo, em %</td>
+                    <td class="p-4">Laudo do solo, informado pelo produtor</td>
+                    <td class="p-4 whitespace-nowrap">
+                      <a
+                        href="./pages/enviar-laudo.html"
+                        class="
+                          font-semibold
+                          underline decoration-[1.5px] underline-offset-4
+                          hover:text-terracota hover:decoration-2
+                          transition-colors
+                        "
+                      >
+                        Enviar laudo
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr class="border-b-[1.5px] border-terra/20">
+                    <th scope="row" class="p-4 font-bold font-dados whitespace-nowrap">
+                      V2
+                    </th>
+                    <td class="p-4">Saturação desejada para a cultura, em %</td>
+                    <td class="p-4">Meta para a cultura, confirmada pelo agrônomo</td>
+                    <td class="p-4 whitespace-nowrap">
+                      <a
+                        href="./pages/enviar-laudo.html"
+                        class="
+                          font-semibold
+                          underline decoration-[1.5px] underline-offset-4
+                          hover:text-terracota hover:decoration-2
+                          transition-colors
+                        "
+                      >
+                        Enviar laudo
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr class="border-b-[1.5px] border-terra/20">
+                    <th scope="row" class="p-4 font-bold font-dados whitespace-nowrap">
+                      CTC
+                    </th>
+                    <td class="p-4">Capacidade de troca de cátions a pH 7, em cmolc/dm³</td>
+                    <td class="p-4">Laudo do solo, informado pelo produtor</td>
+                    <td class="p-4 whitespace-nowrap">
+                      <a
+                        href="./pages/enviar-laudo.html"
+                        class="
+                          font-semibold
+                          underline decoration-[1.5px] underline-offset-4
+                          hover:text-terracota hover:decoration-2
+                          transition-colors
+                        "
+                      >
+                        Enviar laudo
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr class="border-b-[1.5px] border-terra/20">
+                    <th scope="row" class="p-4 font-bold font-dados whitespace-nowrap">
+                      PRNT
+                    </th>
+                    <td class="p-4">Poder relativo de neutralização total do calcário, em %</td>
+                    <td class="p-4">Laudo do lote de calcário escolhido</td>
+                    <td class="p-4 whitespace-nowrap">
+                      <a
+                        href="./pages/enviar-laudo.html"
+                        class="
+                          font-semibold
+                          underline decoration-[1.5px] underline-offset-4
+                          hover:text-terracota hover:decoration-2
+                          transition-colors
+                        "
+                      >
+                        Enviar laudo
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row" class="p-4 font-bold font-dados whitespace-nowrap">
+                      NC
+                    </th>
+                    <td class="p-4">Necessidade de calagem, em toneladas por hectare</td>
+                    <td class="p-4">Resultado da conta</td>
+                    <td class="p-4 whitespace-nowrap">
+                      <a
+                        href="./pages/recomendacao.html"
+                        class="
+                          font-semibold
+                          underline decoration-[1.5px] underline-offset-4
+                          hover:text-terracota hover:decoration-2
+                          transition-colors
+                        "
+                      >
+                        Recomendação
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Fluxo dos carimbos de validação agronômica -->
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <p>Toda dose nasce com o carimbo</p>
+
+              <span
+                class="
+                  px-2.5 py-1
+                  border-2 border-dashed border-terra
+                  text-xs font-bold font-dados uppercase
+                "
+              >
+                Aguardando o agrônomo
+              </span>
+
+              <p>e só vira recomendação do talhão quando recebe o carimbo</p>
+
+              <span
+                class="
+                  px-2.5 py-1
+                  bg-areia
+                  border-2 border-folha
+                  text-xs font-bold font-dados uppercase
+                "
+              >
+                Validada
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -434,5 +909,6 @@
     </footer>
 
     <script src="./js/menu.js"></script>
+    <script src="./js/home.js"></script>
   </body>
 </html>
